@@ -19,3 +19,15 @@
 (def rando (Random.))
 (defn wuerfeln [] (+ 1 (mod (.nextInt rando) 6)) )
 
+(defn quicksort [items]
+  (if (<= (count items) 1) items 
+   (let [pivot   (first items)
+         others  (rest items)]
+      (concat
+;       (quicksort (filter #(>= pivot %) others))
+       (quicksort (filter (fn [x] (>= pivot x)) others))
+       [pivot]
+       (quicksort (filter #(< pivot %) others))))))
+
+
+

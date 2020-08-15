@@ -14,3 +14,6 @@
 
 (doseq [n (range 20)] (println n " " (wuerfeln))) 
 
+(println "#####")
+(doseq [n (quicksort [2 3 1 4 5 8 2 1])] (println n )) 
+
